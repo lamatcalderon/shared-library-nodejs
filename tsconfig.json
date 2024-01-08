@@ -1,9 +1,30 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    //"module": "commonjs",
+    "target": "es5",
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
     "module": "esnext",
-    "strict": true,
-    "esModuleInterop": true
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "types": [
+      "webpack-env"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
   "include": [
     "src/**/*.ts"
@@ -12,3 +33,4 @@
     "node_modules"
   ]
 }
+s

@@ -1,3 +1,2 @@
-function sum(a: number, b: number): number {
-    return a + b;
-}
+import {sum} from "./util/util";
+export {sum}
