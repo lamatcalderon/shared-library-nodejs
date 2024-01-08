@@ -6,6 +6,12 @@ function sum(a, b) {
     return a + b;
 }
 
+var Customer = (function () {
+    function Customer() {
+    }
+    return Customer;
+}());
+
 var CreateCustomerUseCase = (function () {
     function CreateCustomerUseCase() {
     }
@@ -30,6 +36,7 @@ function getCreateCustomerPort() {
     return createCustomerUseCaseInstance;
 }
 
+exports.Customer = Customer;
 exports.getCreateCustomerPort = getCreateCustomerPort;
 exports.sum = sum;
 //# sourceMappingURL=index.js.map
