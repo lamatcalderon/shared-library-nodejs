@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import { RestPort } from "../../port/out/rest.port";
 
 const instance = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "http://localhost:8083",
 });
 
 instance.interceptors.request.use(
