@@ -29,6 +29,6 @@ export default async function config(args) {
             nodeResolve({ preferBuiltins: false }), // or `true`
             commonjs()
         ],
-        external: [ 'moment' ]
+        external: [ 'moment', 'axios' ]
     };
 }

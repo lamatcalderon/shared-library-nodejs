@@ -2,6 +2,7 @@ import { CreateCustomerPort } from "../../infraestructure/port/in/create-custome
 import { Customer } from "../../domain/customer.domain";
 export declare class CreateCustomerUseCase implements CreateCustomerPort {
     private static instance;
+    private restPort;
     private constructor();
     static getInstance(): CreateCustomerUseCase;
     createCustomer(customer: Customer): Promise<Customer>;
