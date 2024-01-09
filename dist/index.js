@@ -69,7 +69,7 @@ var CreateCustomerUseCase = (function () {
         return CreateCustomerUseCase.instance;
     };
     CreateCustomerUseCase.prototype.createCustomer = function (customer) {
-        return this.restPort.post("/customer", customer);
+        return this.restPort.post("/v1/customer", customer);
     };
     return CreateCustomerUseCase;
 }());

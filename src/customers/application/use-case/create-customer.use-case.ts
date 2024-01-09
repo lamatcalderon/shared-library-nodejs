@@ -19,6 +19,6 @@ export class CreateCustomerUseCase implements CreateCustomerPort {
     }
 
     createCustomer(customer: Customer): Promise<Customer> {        
-        return this.restPort.post("/customer", customer);
+        return this.restPort.post("/v1/customer", customer);
     }
 }
