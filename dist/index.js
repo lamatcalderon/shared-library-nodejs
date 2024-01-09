@@ -81,20 +81,48 @@ var CreateCustomerUseCase = (function () {
     return CreateCustomerUseCase;
 }());
 
+var ListCustomerUseCase = (function () {
+    function ListCustomerUseCase() {
+        this.restPort = getRestAxiosPort();
+    }
+    ListCustomerUseCase.getInstance = function () {
+        if (!ListCustomerUseCase.instance) {
+            ListCustomerUseCase.instance = new ListCustomerUseCase();
+        }
+        return ListCustomerUseCase.instance;
+    };
+    ListCustomerUseCase.prototype.listCustomer = function () {
+        return this.restPort.get("/v1/customer");
+    };
+    return ListCustomerUseCase;
+}());
+
 var createCustomerUseCaseInstance = null;
+var listCustomerUseCaseInstance = null;
 function getCreateCustomerPort() {
     if (!createCustomerUseCaseInstance) {
         createCustomerUseCaseInstance = CreateCustomerUseCase.getInstance();
     }
     return createCustomerUseCaseInstance;
 }
+function getListCustomerPort() {
+    if (!listCustomerUseCaseInstance) {
+        listCustomerUseCaseInstance = ListCustomerUseCase.getInstance();
+    }
+    return listCustomerUseCaseInstance;
+}
 
 var createCustomer = function (customer) {
     var createUserPort = getCreateCustomerPort();
     return createUserPort.createCustomer(customer);
 };
+var listCustomer = function () {
+    var listUserPort = getListCustomerPort();
+    return listUserPort.listCustomer();
+};
 
 exports.Customer = Customer;
 exports.createCustomer = createCustomer;
+exports.listCustomer = listCustomer;
 exports.sum = sum;
 //# sourceMappingURL=index.js.map
