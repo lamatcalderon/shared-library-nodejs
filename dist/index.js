@@ -26,6 +26,13 @@ instance.interceptors.request.use(function (config) {
 }, function (err) {
     Promise.reject(err);
 });
+instance.interceptors.response.use(function (response) {
+    return response.data;
+}, function (error) {
+    console.log(error.response.data);
+    console.log(error.response.status);
+    return Promise.reject(error);
+});
 var RestAxios = (function () {
     function RestAxios() {
     }

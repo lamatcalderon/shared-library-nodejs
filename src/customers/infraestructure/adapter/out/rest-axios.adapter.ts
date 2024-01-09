@@ -15,6 +15,17 @@ instance.interceptors.request.use(
     }
 );
 
+instance.interceptors.response.use(
+    (response) => {
+      return response.data;
+    },
+    (error) => {
+      console.log(error.response.data)
+      console.log(error.response.status)
+      return Promise.reject(error);
+    }
+  );
+
 export class RestAxios implements RestPort {
 
     private static instance: RestAxios;
