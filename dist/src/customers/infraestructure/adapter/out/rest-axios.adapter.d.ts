@@ -3,7 +3,7 @@ export declare class RestAxios implements RestPort {
     private static instance;
     private constructor();
     static getInstance(): RestAxios;
-    get<T>(entity: T): Promise<T[]>;
+    get<T>(path: string): Promise<T[]>;
     post<T>(path: string, entity: T): Promise<T>;
     delete<T>(entity: T): Promise<any>;
     put<T>(entity: T): Promise<any>;

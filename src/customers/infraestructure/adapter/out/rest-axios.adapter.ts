@@ -39,8 +39,8 @@ export class RestAxios implements RestPort {
         return RestAxios.instance;
     }
 
-    get<T>(entity: T): Promise<T[]> {
-        throw new Error("Method not implemented.");
+    get<T>(path: string): Promise<T[]> {
+        return instance.get(path);
     }
     post<T>(path: string, entity: T): Promise<T> {
         return instance.post(path, entity);

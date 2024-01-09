@@ -42,8 +42,8 @@ var RestAxios = (function () {
         }
         return RestAxios.instance;
     };
-    RestAxios.prototype.get = function (entity) {
-        throw new Error("Method not implemented.");
+    RestAxios.prototype.get = function (path) {
+        return instance.get(path);
     };
     RestAxios.prototype.post = function (path, entity) {
         return instance.post(path, entity);
